@@ -2,21 +2,21 @@ pipeline {
     agent any
 
     stages {
-        stage('Checkout') {
+        stage('Build') {
             steps {
-                git 'https://github.com/your-username/hello-jenkins-demo.git'
+                echo 'Building the project...'
             }
         }
 
-        stage('Install Dependencies') {
+        stage('Test') {
             steps {
-                sh 'pip install -r requirements.txt'
+                echo 'Running tests...'
             }
         }
 
-        stage('Run Tests') {
+        stage('Deploy') {
             steps {
-                sh 'python -m unittest test_app.py'
+                echo 'Deploying application...'
             }
         }
     }
